@@ -8,13 +8,14 @@
     <div ng-init="nav = 0" class="menu" id="menu-main"> 
         <img src="logo-fully.png"> <span ng-click="logger(); nav = 1;" class="menu-button"> Fully Directory</span> <span class="menu-button">Fully Support </span> <span class="menu-button"> Fully Forms </span>
         </div>
+        <button  class="auth-button" id="authorize-button" style="display: none;">Log in and Load directory</button>
+    <button class="auth-button" id="signout-button" style="display: none;">Sign Out</button>
 <div id="directory" ng-show="nav === 1">
     <div class="search-box">
 		<span class="search-box-title"> Search Directory </span>
         <input ng-model="searchText">
         </div>
-    <button  class="auth-button" id="authorize-button" style="display: none;">Log in and Load directory</button>
-    <button class="auth-button" id="signout-button" style="display: none;">Sign Out</button>
+
     <div class="container"> 
     <div data-ng-repeat="user in userlist | filter:searchText " class="card" ng-show="{{user.thumbnailPhotoUrl}}">
 
