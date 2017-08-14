@@ -91,19 +91,19 @@ var userlist = [{name: "placeholder"}]
           'viewType': "domain_public"
         }).then(function(response) {
           var users = response.result.users;
-          appendPre('Users:');
+          appendPre('Directory Loaded, you may now Show Directory');
           if (users && users.length > 0) {
             for (i = 0; i < users.length; i++) {
                 //console.log(user);
               var user = users[i];
               userlist.push(user)
-              appendPre('-' + user.primaryEmail + ' (' + user.name.fullName + ')');
+              /*appendPre('-' + user.primaryEmail + ' (' + user.name.fullName + ')');
               if (user.organizations){
                   appendPre(user.organizations[0].title);
               };
               if (user.thumbnailPhotoUrl){
                   appendPre(user.thumbnailPhotoUrl)
-              }
+              }*/
             }
           } else {
             appendPre('No users found.');

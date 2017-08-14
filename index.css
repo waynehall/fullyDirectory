@@ -43,11 +43,10 @@ input {
   font-size: 1em;
   height: 40px;
   border-radius: 4px;
-  width: 60%;
+  width: 100%;
   transition: border 0.2s ease-out;
   padding: 0 0.75em;
   display: block;
-  margin: 2.5em auto 0.5em;
   
   -webkit-appearance: none;
 }
@@ -58,4 +57,19 @@ input:hover {
 input:focus {
   outline: none;
   border-color: black;
+}
+.search-box{
+    border-color: #000;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    margin: auto;
+    width: 60%;
+    padding: 5px;
+}
+.auth-button{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #fff;
 }
