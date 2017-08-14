@@ -87,7 +87,8 @@ var userlist = [{name: "placeholder"}]
         gapi.client.directory.users.list({
           'customer': 'my_customer',
           'maxResults': 100,
-          'orderBy': 'email'
+          'orderBy': 'email',
+          'viewType': "domain_public"
         }).then(function(response) {
           var users = response.result.users;
           appendPre('Users:');
@@ -111,16 +112,26 @@ var userlist = [{name: "placeholder"}]
       }
 
 var app = angular.module('MyApp', []);
-app.controller('AppController', function ($scope){      
+app.controller('AppController', function ($scope, $http){      
     $scope.msg = "don't give up!"
     $scope.userlist = userlist
+    $scope.newUserList = {}
     $scope.logger = function(){
         console.log(userlist)
+        $http({
+            method: 'GET',
+            url: 'https://www.googleapis.com/admin/directory/v1/users'
+        }).then(function(response) {
+            $scope.newUserList = response.data;
+        }).then(function(){
+            console.log($scope.newUserList)
+        })
     }
 
     $scope.$watch('userlist', function(){
         console.log($scope.userlist);
     })
+
     
     
 })
