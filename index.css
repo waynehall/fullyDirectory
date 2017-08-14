@@ -80,4 +80,15 @@ input:focus {
     top:0;
     vertical-align: top;
     margin: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.menu-button:hover {
+    color: #ffd524
+}
+#menu-main{
+    display: none;
+}
+.show-toggle{
+    display: block !important;
 }

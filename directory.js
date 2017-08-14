@@ -90,8 +90,10 @@ var userlist = [{name: "placeholder"}]
           'orderBy': 'email',
           'viewType': "domain_public"
         }).then(function(response) {
-          var users = response.result.users;
-          appendPre('Directory Loaded, you may now Show Directory');
+            var users = response.result.users;
+            var menu = document.getElementById('menu-main');
+            menu.className += " show-toggle";
+          //appendPre('Directory Loaded, you may now Show Directory <a href="link"> test </a>');
           if (users && users.length > 0) {
             for (i = 0; i < users.length; i++) {
                 //console.log(user);
