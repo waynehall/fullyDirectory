@@ -73,3 +73,11 @@ input:focus {
     border-radius: 5px;
     background-color: #fff;
 }
+.menu-button{
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    top:0;
+    vertical-align: top;
+    margin: 10px;
+}
