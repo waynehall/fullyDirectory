@@ -1,0 +1,35 @@
+<html ng-app="MyApp">
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body ng-controller="AppController as App">
+    <h2> Fully Directory </h2>
+		<h3> Search Directory </h3>
+		<input ng-model="searchText">
+    {{msg}}
+    <button ng-click="logger()"> Check Users </button>
+    <div class="container"> 
+    <div data-ng-repeat="user in userlist | filter:searchText " class="card" ng-show="{{user.thumbnailPhotoUrl}}">
+
+        <img class="card-img" ng-src="{{user.thumbnailPhotoUrl}}"> 
+        <ul class="card-info">
+           <li class="card-fullname">{{user.name.fullName}}</li> 
+            <li class="card-title"> {{user.organizations[0].title}}</li>  
+            <li ng-if="user.phones[0].value"> <span class="card-cat">Phone:</span>   {{user.phones[0].value}}</li>
+            <li ng-if="user.organizations[0].department"><span class="card-cat">Department:</span> {{user.organizations[0].department}}</li>
+            </ul>
+        </div>
+    </div>
+    <button id="authorize-button" style="display: none;">Authorize</button>
+    <button id="signout-button" style="display: none;">Sign Out</button>
+        <pre id="content"></pre>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+
+    </script>
+    <script src="directory.js"></script>
+
+</body>
