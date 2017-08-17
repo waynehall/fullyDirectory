@@ -46,7 +46,7 @@ var userlist = [{name: "placeholder"}]
       function updateSigninStatus(isSignedIn) {
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
-          //signoutButton.style.display = 'block';
+          signoutButton.style.display = 'block';
           listUsers();
         } else {
           authorizeButton.style.display = 'block';

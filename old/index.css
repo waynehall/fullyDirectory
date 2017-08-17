@@ -3,7 +3,7 @@ body, html{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body{
-    background-color: #f7f7f7;
+    background-color: #a9a9a9;
 }
 .card-info{
     display:inline-block;
@@ -19,16 +19,11 @@ body{
     font-size: 16px;
 }
 .card{
-    background-color: #ffffff;
+    background-color: #e0e0e0;
     margin: 5px;
     min-width: 300px;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
-    /*box-shadow: 5px 5px 20px #000*/
-}
-.card:focus{
-height: 500px;
-
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px #000
 }
 .card-img{
     margin: 5px;
@@ -64,23 +59,19 @@ input:focus {
   border-color: black;
 }
 .search-box{
-    background-color: #ffffff;
-    min-width: 300px;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+    border-color: #000;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
     margin: auto;
     width: 60%;
     padding: 5px;
-    margin-bottom: 15px;
 }
 .auth-button{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     border-radius: 5px;
     background-color: #fff;
-}
-#signout-button{
-display: none;
 }
 .menu-button{
     display: inline-block;
@@ -89,7 +80,7 @@ display: none;
     top:0;
     vertical-align: top;
     margin: 10px;
-    color: #707070;
+    color: #fff;
     cursor: pointer;
 }
 .menu-button:hover {
@@ -100,11 +91,4 @@ display: none;
 }
 .show-toggle{
     display: block !important;
-}
-.menu{
-background-color: #ffffff;
-box-shadow: 0 3px 9px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);
-margin-bottom: 15px;
-padding: 5px;
-    color: #707070;
 }

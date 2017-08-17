@@ -1,0 +1,41 @@
+<html ng-app="MyApp">
+<head>
+    <link rel="stylesheet" href="index.css">
+<meta name="google-site-verification" content="_ApYngYocjcxnahEVGfk2IY-ySxw8wnkfM_Qr7gUHfA" />
+</head>
+
+<body ng-controller="AppController as App">
+    <div ng-init="nav = 0" class="menu" id="menu-main"> 
+        <img src="logo-fully.png"> <span ng-click="logger(); nav = 1;" class="menu-button"> Fully Directory</span> <span class="menu-button">Fully Support </span> <span class="menu-button"> Fully Forms </span>
+        </div>
+        <button  class="auth-button" id="authorize-button" style="display: none;">Log in and Load directory</button>
+    <button class="auth-button" id="signout-button" style="display: none;">Sign Out</button>
+<div id="directory" ng-show="nav === 1">
+    <div class="search-box">
+		<span class="search-box-title"> Search Directory </span>
+        <input ng-model="searchText">
+        </div>
+
+    <div class="container"> 
+    <div data-ng-repeat="user in userlist | filter:searchText " class="card" ng-show="{{user.thumbnailPhotoUrl}}">
+
+        <img class="card-img" ng-src="{{user.thumbnailPhotoUrl}}"> 
+        <ul class="card-info">
+           <li class="card-fullname">{{user.name.fullName}}</li> 
+            <li class="card-title"> {{user.organizations[0].title}}</li>  
+            <li ng-if="user.phones[0].value"> <span class="card-cat">Phone:</span>   {{user.phones[0].value}}</li>
+            <li ng-if="user.organizations[0].department"><span class="card-cat">Department:</span> {{user.organizations[0].department}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+        <pre id="content"></pre>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+
+    </script>
+    <script src="directory.js"></script>
+
+</body>
