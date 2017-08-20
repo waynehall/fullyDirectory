@@ -17,14 +17,17 @@
         </div>
 
     <div class="container"> 
-    <div data-ng-repeat="user in userlist | filter:searchText " class="card" ng-show="{{user.thumbnailPhotoUrl}}">
+    <div data-ng-repeat="user in userlist | filter:searchText " class="card" ng-show="{{user.organizations[0].title}}">
 
-        <img class="card-img" ng-src="{{user.thumbnailPhotoUrl}}"> 
+        <img ng-if="user.thumbnailPhotoUrl" class="card-img" ng-src="{{user.thumbnailPhotoUrl}}"> 
+        <img ng-if="!user.thumbnailPhotoUrl" src="placeholder.png" height=96 width=96>
         <ul class="card-info">
            <li class="card-fullname">{{user.name.fullName}}</li> 
             <li class="card-title"> {{user.organizations[0].title}}</li>  
             <li ng-if="user.phones[0].value"> <span class="card-cat">Phone:</span>   {{user.phones[0].value}}</li>
             <li ng-if="user.organizations[0].department"><span class="card-cat">Department:</span> {{user.organizations[0].department}}</li>
+            <li ng-if="user.organizations[0].costCenter"><span class="card-cat">Location:</span> {{user.organizations[0].costCenter}}</li>
+            
             </ul>
         </div>
     </div>
