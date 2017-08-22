@@ -19,7 +19,7 @@
     <div class="container"> 
     <div data-ng-repeat="user in userlist | filter:searchText " class="card" ng-show="{{user.organizations[0].title}}">
         <div class="card-header">
-        <img ng-if="user.thumbnailPhotoUrl" class="card-img" ng-src="{{user.thumbnailPhotoUrl}}"> 
+        <img ng-if="user.thumbnailPhotoUrl" class="card-img" ng-src="{{user.thumbnailPhotoUrl}}" height=96 width=96> 
         <img ng-if="!user.thumbnailPhotoUrl" src="placeholder.png" height=96 width=96>
         <div class="card-name-title">
         <a class="card-fullname" ng-href="mailto:{{user.primaryEmail}}">{{user.name.fullName}}</a>
