@@ -5,30 +5,54 @@ body, html{
 body{
     background-color: #f7f7f7;
 }
+a{
+    text-decoration: none;
+    color: #000;
+}
 .card-info{
-    display:inline-block;
-    top: 0;
-    vertical-align: top;
+    display:block;
+    top: 5px;
     margin: 5px;
+    padding: 0;
     list-style: none;
 }
 .card-fullname{
     font-size: 26px;
+    margin-top: 10px;
+}
+.card-fullname:hover{
+    color: #ffd524
+}
+.card-name-title{
+    vertical-align: top;
+    text-align: center;
+    display:inline-block;
+    width: 240px;
+    padding-top: 10px;
 }
 .card-title{
-    font-size: 16px;
+    font-size: 18px;
+    display:block;
+    margin:0;
+    color: #707070;
 }
 .card{
     background-color: #ffffff;
     margin: 5px;
-    min-width: 300px;
+    min-width: 350px;
     border-radius: 2px;
+    flex-basis: 0;
+    flex: 1 1 0;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
     /*box-shadow: 5px 5px 20px #000*/
 }
 .card:focus{
 height: 500px;
 
+}
+
+.card-header{
+    height: 100px;
 }
 .card-img{
     margin: 5px;
